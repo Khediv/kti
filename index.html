@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AKTIFIS (AKTIvitas FISik)</title>
+  <style>
+    /* Gaya desain CSS */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333333;
+      padding: 20px;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+
+    th {
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    input[type="number"] {
+      width: 80px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="time"] {
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #333333;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #555555;
+    }
+  </style>
+</head>
+<body>
+  <h1>AKTIFIS (AKTIvitas FISik)</h1>
+
+  <table>
+    <tr>
+      <th>Hari</th>
+      <th>Menit</th>
+    </tr>
+    <tr>
+      <td>Senin</td>
+      <td><input type="number" id="mondayMinutes"></td>
+    </tr>
+    <tr>
+      <td>Selasa</td>
+      <td><input type="number" id="tuesdayMinutes"></td>
+    </tr>
+    <tr>
+      <td>Rabu</td>
+      <td><input type="number" id="wednesdayMinutes"></td>
+    </tr>
+    <tr>
+      <td>Kamis</td>
+      <td><input type="number" id="thursdayMinutes"></td>
+    </tr>
+    <tr>
+      <td>Jumat</td>
+      <td><input type="number" id="fridayMinutes"></td>
+    </tr>
+    <tr>
+      <td>Sabtu</td>
+      <td><input type="number" id="saturdayMinutes"></td>
+    </tr>
+    <tr>
+      <td>Minggu</td>
+      <td><input type="number" id="sundayMinutes"></td>
+    </tr>
+  </table>
+
+  <p>Total Menit per Minggu: <span id="totalMinutes">0</span></p>
+
+  <label for="alarmTime">Waktu Alarm:</label>
+  <input type="time" id="alarmTime">
+
+  <button onclick="startMoveTracking()">Mulai Move Tracking</button>
+  <button onclick="takePhoto()">Ambil Foto</button>
+  <button onclick="sharePhoto()">Share Foto</button>
+
+  <script>
+    function calculateTotalMinutes() {
+      var mondayMinutes = parseInt(document.getElementById('mondayMinutes').value) || 0;
+      var tuesdayMinutes = parseInt(document.getElementById('tuesdayMinutes').value) || 0;
+    var wednesdayMinutes = parseInt(document.getElementById('wednesdayMinutes').value) || 0;
+    var thursdayMinutes = parseInt(document.getElementById('thursdayMinutes').value) || 0;
+    var fridayMinutes = parseInt(document.getElementById('fridayMinutes').value) || 0;
+    var saturdayMinutes = parseInt(document.getElementById('saturdayMinutes').value) || 0;
+    var sundayMinutes = parseInt(document.getElementById('sundayMinutes').value) || 0;
+
+    var totalMinutes = mondayMinutes + tuesdayMinutes + wednesdayMinutes + thursdayMinutes + fridayMinutes + saturdayMinutes + sundayMinutes;
+
+    document.getElementById('totalMinutes').innerText = totalMinutes;
+  }
+
+  function startMoveTracking() {
+    // Mendapatkan waktu alarm
+    var alarmTime = document.getElementById('alarmTime').value;
+
+    // Mengaktifkan pengingat alarm pada waktu yang dipilih
+    setAlarm(alarmTime);
+
+    // Memulai pemantauan aktivitas fisik
+    // ...
+  }
+
+  function takePhoto() {
+    // Mengambil foto
+    // ...
+  }
+
+  function sharePhoto() {
+    // Membagikan foto ke aplikasi WhatsApp
+    // ...
+  }
+
+  function setAlarm(time) {
+    // Mengatur alarm dengan waktu yang dipilih
+    // ...
+  }
+</script>
+</body>
+</html>
